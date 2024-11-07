@@ -1,0 +1,67 @@
+/* import React from 'react';
+import { IPersonaSharedProps, Persona, PersonaSize } from '@fluentui/react';
+import { TestImages } from '@fluentui/example-data';
+import { Stack, IStackStyles, IStackItemStyles, IStackTokens } from '@fluentui/react/lib/Stack';
+
+const examplePersona: IPersonaSharedProps = {
+  imageUrl: TestImages.personaFemale,
+  imageInitials: 'AL',
+  text: 'Annie Lindqvist',
+  secondaryText: 'Software Engirinerr',
+  tertiaryText: 'In a meeting',
+  optionalText: 'Avaialable at 8:00'
+}
+
+export interface DepartmentViewProps {
+  layout?: 'list' | 'sidebyside' | 'grid';
+}
+
+const stackStyles: IStackStyles = {
+  root: {
+    border: 'solid 10px red'
+  }
+}
+
+export const DepartmentView = ({
+  layout = 'list',
+}: DepartmentViewProps) => {
+
+  const dynamicArgs = {
+    vertical: layout === 'list',
+    horizontal: layout === 'sidebyside' || layout === 'grid',
+  }
+  console.log({ ...dynamicArgs }, layout);
+  return (
+    <Stack
+      {...dynamicArgs}
+      enableScopedSelectors
+      wrap
+      tokens={{ childrenGap: 2 }}
+      styles={stackStyles}
+    >
+      {Array.from({ length: 10 }).map((_, index, arr) => {
+
+        // Check if the item is in the nth-last-child(n+4) group
+        const isNthLastChildNPlus4 = index < arr.length - 3;
+
+
+        const itemStyles = {
+          root: {
+            // flexBasis: isNthLastChildNPlus4 ? 'calc((30rem - 100 %) * 999)' : '100%',
+            // flexGrow: '1',
+          },
+        }
+
+        return (
+          <Stack.Item key={index} styles={itemStyles} grow>
+            <Persona
+              {...examplePersona}
+              size={PersonaSize.size56}
+              imageAlt={isNthLastChildNPlus4 ? "yes" : "no  "}
+            />
+          </Stack.Item>
+        );
+      })}
+    </Stack>
+  );
+}; */
