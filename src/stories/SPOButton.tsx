@@ -6,7 +6,7 @@ import type { ButtonProps } from '@fluentui/react-components';
 /** Primary UI component for user interaction */
 export const SPOButton = (props: ButtonProps) => {
   return (
-    <Button {...props} appearance='primary'>
+    <Button {...props} appearance='secondary'>
       label
     </Button>
   );
