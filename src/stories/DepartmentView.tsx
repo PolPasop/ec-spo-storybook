@@ -11,7 +11,8 @@ import './departmentview.css';
 export interface DepartmentViewProps {
   layout?: 'list' | 'sidebyside' | 'grid';
   limit?: number;
-}z
+}
+
 const DepartViewDescriptionClasses = makeStyles({
   root: {
     display: "flex",
