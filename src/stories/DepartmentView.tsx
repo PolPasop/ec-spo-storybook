@@ -1,7 +1,5 @@
-import type { ArgTypes } from '@storybook/react';
 import * as React from 'react';
 import { Avatar } from './Avatar';
-import type { AvatarProps } from '@fluentui/react-components';
 import { TestImages } from '@fluentui/example-data';
 import { CallRegular, MailRegular, LocationRegular } from '@fluentui/react-icons';
 import { makeStyles, tokens, mergeClasses, Subtitle1, Subtitle2, Text, Link } from '@fluentui/react-components';
@@ -88,12 +86,7 @@ const DepartViewClasses = makeStyles({
 const DepartViewPeopleClasses = makeStyles({
   root: {
     padding: tokens.spacingHorizontalM,
-
     color: tokens.colorNeutralForeground3
-  },
-
-  avatar: {
-
   },
 
   persona: {
@@ -218,7 +211,6 @@ function DepartViewPeople({
         <Avatar
           name="Pol"
           size={72}
-          className={classes.avatar}
           image={{
             src: TestImages.personaFemale
           }}
