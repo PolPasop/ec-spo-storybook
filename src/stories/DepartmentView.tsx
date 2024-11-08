@@ -194,7 +194,23 @@ function DepartViewListOfPeople({ layout }: DepartmentViewProps) {
   )
 }
 
-function DepartViewPeople() {
+export interface DepartViewPeopleProps {
+  name?: string,
+  ecJobTitle?: string,
+  email?: string,
+  tel?: string,
+  office?: string,
+  jobDescription?: string
+}
+
+function DepartViewPeople({
+  name = 'Jane DOE',
+  ecJobTitle = 'Secretary - to the Director',
+  email = 'Jane.DOE@ec.europa.eu',
+  tel = '+32 652 87 12',
+  office = 'BRU-L107 12/DCS',
+  jobDescription = 'Ad laborum id non occaecat anim tempor incididunt fugiat. Consectetur dolor duis sunt irure veniam esse ad proident cupidatat labore esse ad. Nostrud mollit aliqua aliquip in ullamco elit. Consequat culpa reprehenderit cillum aliquip officia officia cillum velit.'
+}: DepartViewPeopleProps) {
   const classes = DepartViewPeopleClasses();
   return (
     <div className={classes.root}>
@@ -208,15 +224,15 @@ function DepartViewPeople() {
           }}
         />
         <div className={classes.info}>
-          <div><Text size={400} weight="medium" className={classes.name}>NAME Firstname</Text> <Text size={200} weight="regular" className={classes.ext}>(*)</Text></div>
-          <Text size={300} weight="medium" className={classes.jobtitle}>Test</Text>
+          <div><Text size={400} weight="medium" className={classes.name}>{name}</Text> <Text size={200} weight="regular" className={classes.ext}>(*)</Text></div>
+          <Text size={300} weight="medium" className={classes.jobtitle}>{ecJobTitle}</Text>
         </div>
       </div>
       <div className={classes.xtraInfo}>
-        <Text><MailRegular className={classes.icon} /> Email</Text>
-        <Text><CallRegular className={classes.icon} />Tel</Text>
-        <Text><LocationRegular className={classes.icon} />Office</Text>
-        <Text className={classes.jobDescription}>Ad laborum id non occaecat anim tempor incididunt fugiat. Consectetur dolor duis sunt irure veniam esse ad proident cupidatat labore esse ad. Nostrud mollit aliqua aliquip in ullamco elit. Consequat culpa reprehenderit cillum aliquip officia officia cillum velit.</Text>
+        <Text><MailRegular className={classes.icon} /> {email}</Text>
+        <Text><CallRegular className={classes.icon} />{tel}</Text>
+        <Text><LocationRegular className={classes.icon} />{office}</Text>
+        <Text className={classes.jobDescription}>{jobDescription}</Text>
       </div>
     </div>
   )
